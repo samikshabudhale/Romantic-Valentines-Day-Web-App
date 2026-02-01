@@ -62,5 +62,5 @@ document.addEventListener("DOMContentLoaded", () => {
             yesBtn.style.transform = "scale(1.1)";
         }
     });
-
+    
 });
