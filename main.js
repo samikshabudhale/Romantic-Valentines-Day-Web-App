@@ -14,11 +14,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const yesButton = document.querySelector(".choice-box button:first-child");
     const noButton = document.querySelector(".choice-box button:last-child");
 
+    // ✅ NEW: audio hint element
+    const audioHint = document.querySelector(".audio-hint");
+
     let partnerName = "PIYU";
     let noClickCount = 0;
 
     // ---------------------------
-    // Audio controls (NEW)
+    // Audio controls
     // ---------------------------
     if (audio && volumeSlider) {
         // Set initial volume from slider
@@ -70,10 +73,17 @@ document.addEventListener("DOMContentLoaded", function () {
     // Reveal choices (starts music)
     // ---------------------------
     function revealChoices() {
-        // Start music after user click (browser allows this)
+        // ✅ NEW: hide the hint after click
+        if (audioHint) audioHint.style.display = "none";
+
+        // ✅ FIX: unmute + set volume before play (because HTML autoplay is muted)
         if (audio) {
-            // Keep slider volume preference
-            if (volumeSlider) audio.volume = parseFloat(volumeSlider.value || "0.6");
+            audio.muted = false; // IMPORTANT
+            if (volumeSlider) {
+                audio.volume = parseFloat(volumeSlider.value || "0.6");
+            } else {
+                audio.volume = 0.6;
+            }
 
             audio.play().catch(() => {});
         }
