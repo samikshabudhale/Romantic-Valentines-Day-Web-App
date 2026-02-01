@@ -18,11 +18,11 @@
 
 <body>
 
-    <!-- 🎵 Background Music -->
-    <audio id="background-music" preload="auto" loop>
+    <!-- 🎵 Background Music (autoplay muted due to browser rules) -->
+    <audio id="background-music" preload="auto" loop muted autoplay>
         <source src="Ok%20Jaanu%20Title%20Track.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
     </audio>
-
 
     <!-- Heart-shaped SVG background -->
     <div class="heart-background">
@@ -78,6 +78,8 @@
 
                 <div class="choice-wrapper">
                     <div class="click-box">
+                        <!-- 🔊 Hint text added here -->
+                        <p class="audio-hint">🔊 Tap to turn the music on</p>
                         <button>Click to find out</button>
                     </div>
                     <div class="choice-box hide">
@@ -112,7 +114,7 @@
     <!-- Scripts -->
     <script src="intro.js" defer></script>
     <script src="card.js" defer></script>
-    <script src="main.js?v=1" defer></script>
+    <script src="main.js?v=2" defer></script>
 
 </body>
 </html>
