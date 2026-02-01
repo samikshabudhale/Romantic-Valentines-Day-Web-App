@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Start typewriter effect for the second line
         const typedTextElement = document.querySelector(".typed-text");
         setTimeout(() => {
-            typeWriterEffect(typedTextElement, "Will you be my Valentine?");
+            typeWriterEffect(typedTextElement, "You and me, Valentine style?");
         }, 500); // Delay to allow smooth transition
     }
 
@@ -75,7 +75,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
     yesButton.addEventListener("click", function () {
-        questionText.innerHTML = `<span class="partner-name">${partnerName}</span><br><span class="love-text">I love you baby ❤️</span>`;
+        questionText.innerHTML = `<span class="partner-name">${partnerName}</span><br><span class="love-text">Looks like a plan 💖</span><br>
+        <span class="love-text">I knew you couldn’t resist😏</span>`;
         choiceBox.style.display = "none"; // Hide choices
         threedBox.classList.remove("hide");
 
