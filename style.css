@@ -210,7 +210,6 @@ h3 {
 }
 
 /* Question and Choice Wrapper */
-
 .choice-wrapper > div {
     margin-top: 20px;
 }
@@ -239,6 +238,25 @@ h3 {
 .choice-box:hover {
     transform: scale(1.05);
     box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ NEW: Audio hint styling */
+.audio-hint {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.55);
+    text-align: center;
+    margin-bottom: 10px;
+    letter-spacing: 0.2px;
+    animation: hintPulse 1.8s ease-in-out infinite;
+    user-select: none;
+}
+
+@keyframes hintPulse {
+    0% { opacity: 0.35; transform: translateY(0); }
+    50% { opacity: 0.95; transform: translateY(-2px); }
+    100% { opacity: 0.35; transform: translateY(0); }
 }
 
 .click-box button,
@@ -284,7 +302,6 @@ h3 {
     transform: scale(1.05);
 }
 
-
 .choice-box button {
     transition: all 0.3s ease-in-out;
     padding: 10px 20px;
@@ -307,6 +324,7 @@ h3 {
     margin-top: 10px;
     display: block;
 }
+
 /* Style for the mute button */
 #mute-button {
     background-color: var(--color5);
@@ -364,7 +382,7 @@ footer {
     color: var(--color5);
 }
 
-.hide{
+.hide {
     display: none;
 }
 
