@@ -5,30 +5,30 @@
 }
 
 :root {
-    --font-heading: 'Playfair Display', serif; /* For headings */
-    --font-body: 'Quicksand', sans-serif; /* For body text */
-    --color-bg1: #FFE6E6;  /* Soft Blush */
-    --color-bg2: #FFC2C2;  /* Light Pink */
-    --color1: #FFB3B3;     /* Soft Pink */
-    --color2: #FF9999;     /* Warm Pink */
-    --color3: #FF6666;     /* Romantic Red */
-    --color4: #FF4D4D;     /* Rich Red */
-    --color5: #333333;     /* Dark Gray for text */
-    --color-interactive: #FF8080; /* Interactive Pink */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Quicksand', sans-serif;
+    --color-bg1: #FFE6E6;
+    --color-bg2: #FFC2C2;
+    --color1: #FFB3B3;
+    --color2: #FF9999;
+    --color3: #FF6666;
+    --color4: #FF4D4D;
+    --color5: #333333;
+    --color-interactive: #FF8080;
 }
 
 /* Body and Background */
 body {
-    background: radial-gradient(circle at center, 
-        var(--color-bg1) 20%, 
-        var(--color-bg2) 40%, 
-        var(--color1) 60%, 
-        var(--color2) 75%, 
-        var(--color3) 90%, 
+    background: radial-gradient(circle at center,
+        var(--color-bg1) 20%,
+        var(--color-bg2) 40%,
+        var(--color1) 60%,
+        var(--color2) 75%,
+        var(--color3) 90%,
         var(--color4) 100%);
     background-attachment: fixed;
     color: var(--color5);
-    font-family: 'Georgia', serif; /* Romantic serif font */
+    font-family: 'Georgia', serif;
     overflow-x: hidden;
     line-height: 1.6;
 }
@@ -36,22 +36,14 @@ body {
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    font-weight: 700; /* Bold weight for headings */
+    font-weight: 700;
     color: var(--color5);
     margin-bottom: 1rem;
 }
 
-h1 {
-    font-size: 2.5rem;
-}
-
-h2 {
-    font-size: 2rem;
-}
-
-h3 {
-    font-size: 1.75rem;
-}
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
 
 /* Heart-shaped background */
 .heart-background {
@@ -60,31 +52,25 @@ h3 {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Place it behind all other content */
-    animation: pulse 2s infinite ease-in-out; /* Beating animation */
-    opacity: 0.8; /* Soft transparency */
-    filter: blur(30px); /* Blurry effect */
+    z-index: -1;
+    animation: pulse 2s infinite ease-in-out;
+    opacity: 0.8;
+    filter: blur(30px);
 }
 
 .heart-background svg {
     width: 100%;
     height: 100%;
-    fill: url(#heart-gradient); /* Apply gradient to the heart */
+    fill: url(#heart-gradient);
 }
 
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1); /* Slightly larger */
-    }
-    100% {
-        transform: scale(1);
-    }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
-/* Ensure content is above the heart background */
+/* Ensure content is above background */
 .body-wrapper {
     position: relative;
     z-index: 1;
@@ -100,9 +86,9 @@ h3 {
     align-items: center;
     padding: 20px;
     width: 100%;
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
-    backdrop-filter: blur(10px); /* Frosted glass effect */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Soft border */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .navlogo, .navlinks {
@@ -111,102 +97,24 @@ h3 {
     font-weight: bold;
 }
 
-/* Main Layout */
+/* ✅ MAIN LAYOUT: FIXED CENTERING */
 .main-wrapper {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center; /* ✅ Center horizontally */
+    align-items: center;     /* ✅ Center vertically */
     padding: 20px;
-    flex: 1; /* Allow main content to grow and push footer down */
-}
-
-/* Left and Right Aside */
-.aside-wrapper {
-    padding: 5px;
-    flex: 0 0 200px; /* Fixed width to prevent stretching */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.aside-left-wrapper {
-    padding: 10px;
-}
-
-.aside {
-    width: 100%;
-    text-align: center;
-    color: var(--color5);
-}
-
-/* Video Card */
-.video-card {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
-    will-change: transform, box-shadow;
-    perspective: 1000px;
-    position: relative;
-}
-
-.video-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-/* Glare Effect */
-.glare {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    border-radius: inherit;
-    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.3), transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease-out;
-    pointer-events: none;
-}
-
-.video-card:hover .glare {
-    opacity: 1;
-}
-
-.video-card video {
-    width: 100%;
-    border-radius: 15px;
+    flex: 1;
+    gap: 24px;
 }
 
 /* Main Section */
 .main-section-wrapper {
-    font-style: var(--font-body);
-    flex: 2;
+    flex: 0 1 700px; /* ✅ keeps it centered & not stretched */
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-}
-
-/* 3D Box */
-.threed-box {
-    width: 250px;
-    height: 250px; /* Set a height */
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* Ensures nothing spills */
-    position: relative;
 }
 
 /* Question and Choice Wrapper */
@@ -240,25 +148,6 @@ h3 {
     box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* ✅ NEW: Audio hint styling */
-.audio-hint {
-    font-family: var(--font-body);
-    font-size: 1rem;
-    font-weight: 600;
-    color: rgba(0, 0, 0, 0.55);
-    text-align: center;
-    margin-bottom: 10px;
-    letter-spacing: 0.2px;
-    animation: hintPulse 1.8s ease-in-out infinite;
-    user-select: none;
-}
-
-@keyframes hintPulse {
-    0% { opacity: 0.35; transform: translateY(0); }
-    50% { opacity: 0.95; transform: translateY(-2px); }
-    100% { opacity: 0.35; transform: translateY(0); }
-}
-
 .click-box button,
 .choice-box button {
     border: none;
@@ -275,10 +164,9 @@ h3 {
 }
 
 .choice-box button:first-child {
-    background-color: #A7D397; /* Soft pastel green */
+    background-color: #A7D397;
     color: white;
-    border: none;
-    transition:  0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
 .choice-box button:last-child {
@@ -289,11 +177,11 @@ h3 {
 
 /* Hover effects */
 .choice-box button:first-child:hover {
-    background-color: #8BBF77; /* Slightly deeper green on hover */
+    background-color: #8BBF77;
 }
 
 .choice-box button:last-child:hover {
-    background-color: #f74f4f; /* Soft gray hover effect */
+    background-color: #f74f4f;
 }
 
 .click-box button:hover,
@@ -302,6 +190,7 @@ h3 {
     transform: scale(1.05);
 }
 
+/* Buttons base */
 .choice-box button {
     transition: all 0.3s ease-in-out;
     padding: 10px 20px;
@@ -309,23 +198,63 @@ h3 {
     font-size: 1.5rem;
 }
 
+/* 3D Box */
+.threed-box {
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Text styles */
 .love-text {
     font-size: 2.5rem;
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
-    color: var(--color5); /* Warm Pink */
+    color: var(--color5);
     text-align: center;
 }
 
 .no-choice-text {
     font-size: 1.5rem;
     font-style: italic;
-    color: var(--color5); /* Dark gray */
+    color: var(--color5);
     margin-top: 10px;
     display: block;
 }
 
-/* Style for the mute button */
+.partner-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--color3);
+}
+
+/* ✅ audio hint */
+.audio-hint {
+    margin-bottom: 10px;
+    opacity: 0.7;
+    font-family: var(--font-body);
+    font-size: 1rem;
+}
+
+/* ✅ Fixed sound control so it doesn’t push layout */
+.aside.right {
+    position: fixed;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px;
+    text-align: center;
+}
+
+/* Mute button */
 #mute-button {
     background-color: var(--color5);
     color: white;
@@ -333,12 +262,11 @@ h3 {
     padding: 10px 20px;
     border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease-out, transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
     font-size: 1rem;
 }
 
 #mute-button:hover {
-    background-color: var(--color5);
     transform: scale(1.05);
 }
 
@@ -353,7 +281,6 @@ h3 {
     cursor: pointer;
 }
 
-/* Style for the slider thumb */
 #volume-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 15px;
@@ -375,10 +302,10 @@ footer {
     justify-content: center;
     padding: 20px;
     width: 100%;
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
-    backdrop-filter: blur(10px); /* Frosted glass effect */
-    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Soft border */
-    margin-top: auto; /* Push footer to the bottom */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: auto;
     color: var(--color5);
 }
 
@@ -386,13 +313,7 @@ footer {
     display: none;
 }
 
-.partner-name {
-    font-family: 'Playfair Display', serif; /* Fancy font */
-    font-size: 3rem; /* Bigger text */
-    font-weight: bold;
-    color: var(--color3); /* Romantic red */
-}
-
+/* Hearts animation */
 .heart-container {
     position: fixed;
     top: 0;
@@ -401,7 +322,7 @@ footer {
     height: 100%;
     pointer-events: none;
     overflow: hidden;
-    z-index: 999; /* Ensure it's above everything */
+    z-index: 999;
 }
 
 .heart {
@@ -415,7 +336,6 @@ footer {
     opacity: 0.8;
 }
 
-/* Creating heart shape using before and after pseudo-elements */
 .heart::before,
 .heart::after {
     content: "";
@@ -437,12 +357,6 @@ footer {
 }
 
 @keyframes floatUp {
-    0% {
-        transform: translateY(0) scale(1) rotate(-45deg);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-100vh) scale(0.5) rotate(-45deg);
-        opacity: 0;
-    }
+    0% { transform: translateY(0) scale(1) rotate(-45deg); opacity: 1; }
+    100% { transform: translateY(-100vh) scale(0.5) rotate(-45deg); opacity: 0; }
 }
